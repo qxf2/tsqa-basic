@@ -1,0 +1,16 @@
+*.pyc
+*.lnk
+utils/*.pyc
+logs/
+screenshots/
+log/
+data/
+.cache/
+geckodriver.log
+.DS_Store
+debug.log
+__pycache__
+*.orig
+*credentials*.py
+engineering_benchmarks.log
+.vscode/
