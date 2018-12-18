@@ -41,9 +41,7 @@ def get_input_to_calcluate_bmi():
 def calculate_bmi(weight_of_the_user,height_of_the_user):
     "This function calculates the bmi"
     # Calculate the BMI of the user according to height and weight
-    bmi_of_the_user = weight_of_the_user/(height_of_the_user * height_of_the_user)
-
-    print 'BMI of the user is : ' , bmi_of_the_user
+    bmi_of_the_user = weight_of_the_user/(height_of_the_user * height_of_the_user)    
 
     # Return the BMI of the user to the called function
     return bmi_of_the_user
@@ -65,6 +63,7 @@ if __name__ == "__main__":
     weight_of_the_user,height_of_the_user = get_input_to_calcluate_bmi()    
     # This calling function stores the BMI of the user
     bmi_value = calculate_bmi(weight_of_the_user,height_of_the_user)
+    print 'BMI of the user is : ' , bmi_value
     # This function is used to calculate the user's criteria
     check_user_bmi_category(bmi_value)
 

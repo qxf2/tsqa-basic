@@ -1,5 +1,5 @@
 """
-Exercise 3:
+Exercise 6:
         Write a program to calculate the BMI by accepting user input from the keyboard and check whether the user 
         comes in underweight ,normal weight or obesity by creating a class. Read the CSV file which contains 
         player data and compare your BMI with a player.Create functions for calculating BMI and 
@@ -67,8 +67,8 @@ class bmiCalculator:
         # Calculate the BMI of the user according to height and weight
         self.bmi_of_the_user = round(self.weight_of_the_user/(self.height_of_the_user * self.height_of_the_user),1)
 
-        print 'BMI of the user is : ' , self.bmi_of_the_user
-
+        return self.bmi_of_the_user
+        
     def check_user_bmi_category(self):
         "This function checks whether the user comes under under weight, normal or obesity"    
         if self.bmi_of_the_user <= 18.5:
@@ -113,7 +113,8 @@ if __name__ == "__main__":
     bmi_calculator_object.get_input_to_calcluate_bmi()     
     
     # This method calculates BMI of the user
-    bmi_calculator_object.calculate_bmi()
+    bmi_of_the_user = bmi_calculator_object.calculate_bmi()
+    print 'BMI of the user is : ' , bmi_of_the_user
 
     # This method is used to calculate the user's category
     bmi_calculator_object.check_user_bmi_category()

@@ -1,5 +1,5 @@
 """
-Exercise 3:
+Exercise 7:
         Write a program to calculate the BMI by accepting user input from the keyboard and check whether the user 
         comes in underweight ,normal weight or obesity by creating a class. Read the CSV files which contains player 
         data and compare your BMI with a player.Create functions for calculating BMI and check the user category.
