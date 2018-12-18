@@ -68,7 +68,7 @@ def calculate_bmi(weight_of_the_user,height_of_the_user):
     return bmi_of_the_user
 
 def check_user_bmi_category(bmi):
-    "This function checks whether the user comes under under weight, normal or obesity"    
+    "This function checks if the user is underweight, normal, overweight or obese"    
     if bmi <= 18.5:
          print 'The user is considered as underweight'
     elif bmi > 18.5 and bmi < 24.9:
