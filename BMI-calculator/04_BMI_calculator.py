@@ -1,4 +1,12 @@
 """
+We will use this script to learn Python to absolute beginners
+The script is an example of BMI_Calculator implemented in Python
+The BMI_Calculator: 
+    # Get the weight(Kg) of the user
+    # Get the height(m) of the user
+    # Caculate the BMI using the formula
+        BMI=weight in kg/height in meters*height in meters
+
 Exercise 4:
         Write a program to calculate the BMI by accepting user input from the keyboard and check whether the user comes
         in underweight ,normal weight or obesity. Read the CSV which contains player data and compare a user BMI 
@@ -18,29 +26,21 @@ Exercise 4:
             iii)Create one more function for checking user category
             iv)Create a function to read the CSV file and return the matched player
 
-We will use this script to learn Python to absolute beginners
-The script is an example of BMI_Calculator implemented in Python
-The BMI_Calculator: 
-    # Get the weight(Kg) of the user
-    # Get the height(m) of the user
-    # Caculate the BMI using the formula
-        BMI=weight in kg/height in meters*height in meters
 """
 
 import os
 
 def get_input_to_calcluate_bmi():
     "This function gets the input from the user"  
-    print "Enter the weight of the user in Kg's"
+    print("Enter the weight of the user in Kg's")
     # Get the weight of the user through keyboard
     weight_of_the_user = input()
 
     # Get the height of the user through keyboard
-    print "Enter the height of the user in meters"
+    print("Enter the height of the user in meters")
     height_of_the_user = input()
 
     return weight_of_the_user,height_of_the_user
-
 
 def calculate_bmi(weight_of_the_user,height_of_the_user):
     "This function calculates the bmi"
@@ -53,36 +53,36 @@ def calculate_bmi(weight_of_the_user,height_of_the_user):
 def check_user_bmi_category(bmi):
     "This function checks whether the user comes under under weight, normal or obesity"    
     if bmi <= 18.5:
-         print 'The user is considered as underweight'
+         print("The user is considered as underweight")
     elif bmi > 18.5 and bmi < 24.9:
-         print 'The user is considered as normal weight'
+         print("The user is considered as normal weight")
     elif bmi > 25 and bmi <= 29.9:
-        print 'The user is considered as overweight'
+        print("The user is considered as overweight")
     elif bmi >=30:
-        print 'The user is considered as obese'
+        print("The user is considered as obese")
     
-def read_csv_file(bmi_value):
+def compare_user_bmi_with_player_csv(bmi_value):
     "This functions reads the CSV file and compare the BMI value with players and returns the players name"
     # To read the CSV file we have to join the path where it's located   
-    filename = os.path.abspath(os.path.join('..','training',"all_players_data.csv"))
-    matched_player = []      
+    filename = os.path.abspath(os.path.join('..','training/data',"all_players_data.csv"))
+    matched_player = []
+
     # To open the text file and assign to object fp
     with open(filename,"r") as fp:
         all_lines = fp.readlines()              
         for each_line in all_lines:            
             # Fetch the player name from the file           
             player_name = each_line.split(',')[0]                       
-            #Fetche the player BMI from the file          
-            player_bmi = each_line.split(',')[-1].split('\n')[0]
-            
-            #Checks player BMI and user BMI are equal 
+            # Fetch the player BMI from the file          
+            player_bmi = each_line.split(',')[-1].split('\n')[0]            
+            # Checks player BMI and user BMI are equal 
             if float(player_bmi) == bmi_value:
                 matched_player.append({player_name:player_bmi})
                          
         if not matched_player:
-            print " Your BMI is not matching with any of the players dataset which is used here"
+            print("Your BMI is not matching with any of the players dataset which is used here")
         else:
-            print "Your BMI is matching with"
+            print("Your BMI is matching with")
             print matched_player 
        
 # Program starts here
@@ -92,9 +92,10 @@ if __name__ == "__main__":
     
     # This calling function calculates the BMI of the user
     bmi_value = calculate_bmi(weight_of_the_user,height_of_the_user)
-    print 'BMI of the user is : ' , bmi_value
+    print("BMI of the user is :", bmi_value)
+
     # This function is used to calculate the user's criteria
     check_user_bmi_category(bmi_value)
 
     # This function is used to read the csv file and compare the BMI value
-    read_csv_file(bmi_value)
+    compare_user_bmi_with_player_csv(bmi_value)
