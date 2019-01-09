@@ -27,7 +27,7 @@ email_textbox.send_keys("annapoorani@qxf2.com")
 time.sleep(2)
 
 # Xpath for the next button
-next_button = driver.find_element_by_xpath('//span[@class="RveJvd snByac" and text()="Next"]')
+next_button = driver.find_element_by_xpath('//span[contains(@class,"RveJvd snByac") and text()="Next"]')
 # Click the next button
 next_button.click()
 # Sleeping time till the page loads
@@ -39,24 +39,14 @@ password_textbox = driver.find_element_by_xpath("//input[@name='password']")
 password_textbox.send_keys("hoodi2782")
 
 # Xpath for the next button
-password_next_button = driver.find_element_by_xpath('//span[@class="RveJvd snByac" and text()="Next"]')
+password_next_button = driver.find_element_by_xpath('//span[contains(@class,"RveJvd snByac") and text()="Next"]')
 # Click the next button
 password_next_button.click()
 # Sleeping time till the page loads
 time.sleep(5)
 
-"""google_apps = driver.find_element_by_xpath('//a[@aria-label="Google apps"]')
-google_apps.click()
-contacts = driver.find_element_by_xpath('//span[text()="Contacts"]')
-contacts.click()
-print ' i found contacts'
-action = ActionChains(driver)
-action.move_to_element(contacts)
-print ' i performed click on contacts'
-action.perform()"""
-
 # Xpath for compose button
-compose_button = driver.find_element_by_xpath('//div[@class="T-I J-J5-Ji T-I-KE L3"]')
+compose_button = driver.find_element_by_xpath('//div[contains(@class,"T-I J-J5-Ji T-I-KE L3")]')
 # Click the compose button
 compose_button.click()
 # Sleep time is little more still it takes time to load
