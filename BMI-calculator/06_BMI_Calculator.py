@@ -80,22 +80,23 @@ def check_user_bmi_category(bmi):
     elif bmi >=30:
         print("The user is considered as obese")
 
-def compare_user_bmi_with_player_csv(self):
+def compare_user_bmi_with_player_csv(bmi_of_the_user):
     "This functions reads the csv file and compare the BMI value with players and returns the players name"
     filename = os.path.abspath(os.path.join('..','training/data',"all_players_data.csv"))
+    matched_player = []
     with open(filename,"r") as fp:
         csv_file = csv.reader(fp)
         next(csv_file)
-    for i, row in enumerate(csv_file):
-        bmi_value_in_row = row[3]
-        player_name = row[0]    
-        if float(bmi_value_in_row) == self.bmi_of_the_user:
-            self.matched_player.append({player_name:bmi_value_in_row})
-    if not self.matched_player:
+        for i, row in enumerate(csv_file):
+            bmi_value_in_row = row[3]
+            player_name = row[0]    
+            if float(bmi_value_in_row) == bmi_of_the_user:
+                matched_player.append({player_name:bmi_value_in_row})
+    if not matched_player:
         print("No matching data")
     else:
         print("Your BMI is matching with")
-        print self.matched_player
+        print matched_player
     
 # Program starts here
 if __name__ == "__main__":

@@ -112,7 +112,4 @@ if __name__ == "__main__":
     print("BMI of the user is :",bmi_value)
    
     # This function is used to calculate the user's criteria
-    compare_user_bmi_with_player_csv(bmi_value)
-
-    # This function is used to read the CSV file and compare the BMI value
-    read_csv_file(bmi_value)
+    compare_user_bmi_with_player_csv(bmi_value)    
