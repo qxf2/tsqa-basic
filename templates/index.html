@@ -1,0 +1,73 @@
+<!doctype html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-38578610-5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-38578610-5');
+    </script>
+    <title>BMI calculator</title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Abel|Open+Sans:400,600" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+</head>
+
+<body>
+    <div class="container toppy">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h1 class="margin-base-vertical text-center">The BMI calculator</h1>
+                <p class="input-group">
+                    <label for="userweight">Enter user's weight in Kg:</label>                    
+                    <input type="text" id="userweight" class="form-control input-lg" name="userweight" >
+                </p>
+                <p class="input-group ">
+                    <label for="userweight">Enter user's weight in Kg:</label>                    
+                    <input type="text" id="userheight" class="form-control input-lg" name="userheight" >
+                </p>
+                <p class="text-center top-space-40">
+                    <button type="submit" class="btn btn-success btn-lg" id="getbmi">Submit</button>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <p class="text-center top-space-20" id="resultDiv">
+                </p>
+            </div>
+        </div>
+    </div>    
+    <script>
+        $("document").ready(function () {
+            $("#getbmi").click(function () {
+                var userweight = $('#userweight').val();
+                var userheight = $('#userheight').val();
+                var callDetails = {
+                        type: 'POST',
+                        url: '/bmicalculator',
+                        data: {
+                            'userweight': userweight,
+                            'userheight': userheight
+                        }
+                    };
+                    $.ajax(callDetails).done(function (bmicalculator) {
+                        console.log('Hello! I am in the done part of the ajax call');
+                        console.log(bmicalculator);
+                        $("#resultDiv").css('color', 'black');
+                        $("#resultDiv").text('The user BMI is ' + bmicalculator.user_bmi);
+                    });                
+            });
+        });
+       
+    </script>
+</body>
+
+</html>
