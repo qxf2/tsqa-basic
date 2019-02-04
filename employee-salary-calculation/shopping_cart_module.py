@@ -5,7 +5,7 @@ class ShoppingCart:
     
     def add_item(self,item):
         "Adding and updating the items into the cart"        
-        if not self.shopping_cart.has_key(item.item_name):            
+        if item and not self.shopping_cart.has_key(item.item_name):            
             self.shopping_cart.update({item.item_name:item.item_quantity})
         else:
             for key,value in self.shopping_cart.iteritems():
