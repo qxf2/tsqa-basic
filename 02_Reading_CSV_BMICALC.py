@@ -58,7 +58,13 @@ def readall_players_data_csv_file():
 def entry_pointfor_BMI():
     global BMI_CALC
     i =1
-    count = int(input("How Many entries:"))
+    while True:
+        print("How Many entries:")
+        try:
+            count = int(input())
+            break
+        except ValueError:
+           print("The value you have entered is not a integer value.Please enter the input in integer value") 
     while i <= count:
         str_name = str(input("Enter the Name:"))
         int_age = int(input("Enter the age:"))
