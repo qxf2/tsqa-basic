@@ -64,7 +64,7 @@ def check_user_bmi_category(bmi):
 def compare_user_bmi_with_player_csv(bmi_value):
     "This functions reads the CSV file and compare the BMI value with players and returns the players name"
     # To read the CSV file we have to join the path where it's located   
-    filename = os.path.abspath(os.path.join('..','training/data',"all_players_data.csv"))
+    filename = os.path.abspath(os.path.join(os.path.dirname(__file__),'..','data',"all_players_data.csv"))
     matched_player = []
 
     # To open the text file and assign to object fp
