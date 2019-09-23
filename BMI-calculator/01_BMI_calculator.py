@@ -19,11 +19,11 @@ Exercise 1:
 
 print("Enter the weight of the user in Kg's")
 # Get the weight of the user through keyboard
-weight_of_the_user = input()
+weight_of_the_user = float(input())
 
 # Get the height of the user through keyboard
 print("Enter the height of the user in meters")
-height_of_the_user = input()
+height_of_the_user = float(input())
 
 # Calculate the BMI of the user according to height and weight
 bmi_of_the_user = weight_of_the_user/(height_of_the_user * height_of_the_user)

@@ -69,8 +69,8 @@ def employee_federal_tax(employee_name,taxable_income):
         federal_tax =0
         print("The employee no need to pay the federal tax")
 
-    print("%s federal tax is %s" %(employee_name,federal_tax))
-
+    # print("federal tax is %s") %employee_name,federal_tax
+    print("The federal tax for %s is %s"% (employee_name,federal_tax))
     return federal_tax
 
 def employee_take_homes_salary(employee_name,employee_gross_income,federal_tax):
@@ -83,7 +83,7 @@ def employee_take_homes_salary(employee_name,employee_gross_income,federal_tax):
 
     # 1.45% of gross income is medicare tax
     medicare_tax = float(employee_gross_income) *(1.45/100)
-    print 'The medicare tax for %s is %s'%(employee_name,medicare_tax)
+    print("The medicare tax for %s is %s"%(employee_name,medicare_tax))
 
     # Taxable due
     taxable_due = federal_tax + social_security + medicare_tax
@@ -116,8 +116,9 @@ def calculate_take_home_salary(all_lines):
        
 def read_employee_salary_csv_file():
     "This functions reads the CSV file"
-    # To read the CSV file we have to join the path where it's located       
-    filename = os.path.abspath(os.path.join('..','training/data',"employee_payroll.csv"))
+    # To read the CSV file we have to join the path where it's located 
+    path = "C:\\Users\\Rahul Bhave Qxf2\\code\\rahul-qxf2"      
+    filename = os.path.abspath(os.path.join(path,"tsqa-basic\\data","employee_payroll.csv"))
 
     # To open the text file and assign to object fp
     with open(filename,"r") as fp:

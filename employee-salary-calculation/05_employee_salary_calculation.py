@@ -98,7 +98,7 @@ if __name__ == "__main__":
         print("Enter the employee gross income")
         # Get the input from the user and check it's of correct type
         try:        
-            gross_income = float(raw_input())
+            gross_income = float(input())
             break           
         # If user inputs wrong type then the except will run
         except ValueError:

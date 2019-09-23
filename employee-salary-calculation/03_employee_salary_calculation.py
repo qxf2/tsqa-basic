@@ -93,7 +93,7 @@ def employee_take_home_salary(federal_tax):
 if __name__ == "__main__":
     # Enter the gross income
     print("Enter the gross income")
-    gross_income = float(raw_input())
+    gross_income = float(input())
     taxable_deduction = 12000
 
     # Taxable income

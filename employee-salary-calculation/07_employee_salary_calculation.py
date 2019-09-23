@@ -117,8 +117,9 @@ def calculate_take_home_salary(csv_file):
 def read_employee_salary_csv_file():
     "This functions reads the CSV file"    
     # To read the CSV file we have to join the path where it's located      
-    filename = os.path.abspath(os.path.join('..','training/data',"employee_payroll.csv"))
-
+    path = "C:\\Users\\Rahul Bhave Qxf2\\code\\rahul-qxf2"      
+    filename = os.path.abspath(os.path.join(path,"tsqa-basic\\data","employee_payroll.csv"))
+    
     # To open the text file and assign to object fp
     with open(filename,"r") as fp:
         csv_file = csv.reader(fp)

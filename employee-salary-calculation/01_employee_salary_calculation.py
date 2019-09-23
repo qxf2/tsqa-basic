@@ -13,13 +13,13 @@ The salary calculator:
 print("Enter the gross income")
 
 # raw_input gets the input from the keyboard through user
-gross_income = float(raw_input())
+gross_income = float(input())
 
 # Enter the federal tax
 print("Enter the federal_tax")
 
 # Getting the federal tax from the user
-fedral_tax = float(raw_input())
+fedral_tax = float(input())
 
 # Taxable income will be reduced from gross income.This is the fixed dedutable income
 taxable_deduction = 12000
