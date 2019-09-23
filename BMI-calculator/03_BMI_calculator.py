@@ -31,11 +31,11 @@ def get_input_to_calcluate_bmi():
     "This function gets the input from the user"    
     print("Enter the weight of the user in Kgs")    
     # Get the weight of the user through keyboard
-    weight_of_the_user = input()
+    weight_of_the_user = float(input())
 
     # Get the height of the user through keyboard
     print("Enter the height of the user in meters")
-    height_of_the_user = input()
+    height_of_the_user = float(input())
 
     return weight_of_the_user,height_of_the_user
 
