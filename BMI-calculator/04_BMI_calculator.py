@@ -34,11 +34,11 @@ def get_input_to_calcluate_bmi():
     "This function gets the input from the user"  
     print("Enter the weight of the user in Kg's")
     # Get the weight of the user through keyboard
-    weight_of_the_user = input()
+    weight_of_the_user = float(input())
 
     # Get the height of the user through keyboard
     print("Enter the height of the user in meters")
-    height_of_the_user = input()
+    height_of_the_user = float(input())
 
     return weight_of_the_user,height_of_the_user
 
@@ -83,7 +83,7 @@ def compare_user_bmi_with_player_csv(bmi_value):
             print("Your BMI is not matching with any of the players dataset which is used here")
         else:
             print("Your BMI is matching with")
-            print matched_player 
+            print (matched_player)
        
 # Program starts here
 if __name__ == "__main__":
