@@ -19,7 +19,7 @@ Federal tax brackets
 
 # Enter the gross income
 print("Enter the gross income")
-gross_income = float(raw_input())
+gross_income = float(input())
 
 # Taxable income will be reduced from gross income
 taxable_deduction = 12000
