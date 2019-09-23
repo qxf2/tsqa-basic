@@ -40,7 +40,7 @@ def get_input_to_calcluate_bmi():
         print("Enter the weight of the user in Kg's")
         # Get the input from the user and check it's of correct type
         try:        
-            weight_of_the_user = float(raw_input())
+            weight_of_the_user = float(input())
             # isintance will check the type of the input and returns true/false
             if isinstance(weight_of_the_user,float):
                 break 
@@ -52,7 +52,7 @@ def get_input_to_calcluate_bmi():
     while True:
         print("Enter the height of the user in Kg's")
         try:        
-            height_of_the_user = float(raw_input())
+            height_of_the_user = float(input())
             if isinstance(height_of_the_user,float):
                 break 
         except ValueError:
@@ -100,7 +100,7 @@ def compare_user_bmi_with_player_csv(bmi_value):
             print("Your BMI is not matching with any of the players dataset which is used here")
         else:
             print("Your BMI is matching with")
-            print matched_player 
+            print (matched_player)
     
 # Program starts here
 if __name__ == "__main__":
