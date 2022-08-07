@@ -20,6 +20,11 @@ Exercise 2: Check if the no. of days workout the user does:
               All Day          BMR*1.725       Heavy Exercise
 Here there will be an implication of User-defined functions and Calling function along with if else statement.
 """
+import os
+import configparser
+import helper
+subject_file = configparser.ConfigParser()
+
 
 print("*****Welcome To The BMR Calculator*****")
 def __getinput_to_calculate_bmr():
@@ -31,36 +36,37 @@ def __getinput_to_calculate_bmr():
         print("Enter Weight in pound and Height in inches")
     Weight_of_the_user = float(input("Enter the weight of the user:"))
     Height_of_the_user = float(input("Enter the height of the user:"))
-    Gender_of_the_user = (input("Enter the gender of the user M/F:"))
+    Gender_of_the_user = (input("Enter the gender of the user M/m or F/f:")).lower()
     Age_of_the_user = int(input("Enter the age of the user:"))
 
 
-    return Weight_of_the_user, Height_of_the_user, Age_of_the_user,Units_of_the_user, Gender_of_the_user,
+
+    return Weight_of_the_user, Height_of_the_user, Age_of_the_user,Units_of_the_user, Gender_of_the_user
 
 def calculate_bmr (Weight_of_the_user, Height_of_the_user, Age_of_the_user,Units_of_the_user, Gender_of_the_user):
     " This function calculates the BMR in metric OR american units on the basis of gender and age "
 
-     # Here if the Gender_of_the_user is 'M' i.e Male, then formula will be BMR_Male
-    if Gender_of_the_user == 'M' or 'm' and 'M'=='Metric':
-        BMR_Male = int(88.362 + (13.397 * Weight_of_the_user) + (4.799 * Height_of_the_user)- (5.677*Age_of_the_user))
-        return BMR_Male
+     # Here if the Gender_of_the_user is 'M' i.e Male, then formula will be:
+    if Gender_of_the_user ==  Units_of_the_user:
+        BMR = round(Metric + (Weight * Weight_of_the_user) + (Height * Height_of_the_user)- (Age*Age_of_the_user))
+        return BMR
 
-    # Here if the Gender_of_the_user is 'F' i.e Female, then formula will be BMR_Female
-    elif Gender_of_the_user == 'F' or 'f' 'F'=='Metric':
-        BMR_Female = int(447.593 + (9.247 * weight_of_the_user) + (3.098 * height_of_the_user)- (4.330*Age_of_the_user))
-        return BMR_Female
+    # Here if the Gender_of_the_user is 'F' i.e Female, then formula will be:
+    elif Gender_of_the_user == Units_of_the_user:
+        BMR = round(Metric + (Weight1 * weight_of_the_user) + (Height1 * height_of_the_user)- (Age1*Age_of_the_user))
+        return BMR
 
     # Here if the Gender_of_the_user is 'M' i.e Male, and taken in American Units (Weights and Heights of the user is pound and inch respectively
-    # then formula will be BMR_Male
-    elif 'M' == 'Amr' and Units_of_the_user == 'American':
-        BMR_Male1 = int(88.362 + (13.397 * weight_of_the_user*2.2) + (4.799 * height_of_the_user*39.37) - (5.677 * Age_of_the_user))
-        return BMR_Male1
+    # then formula will be:
+    elif Gender_of_the_user == Units_of_the_user:
+        BMR = round(American + (Weight * weight_of_the_user*pound) + (Height * height_of_the_user*inch) - (Age * Age_of_the_user))
+        return BMR
 
     # Here if the Gender_of_the_user is 'F' i.e Female, and taken in American Units (Weights and Heights of the user is taken into pound and inch respectively
-    # then formula will be BMR_Female
-    elif 'F' == 'American' and Units_of_the_user == 'American':
-        BMR_Female1 = int(447.593 + (9.247 * weight_of_the_user*2.2) + (3.098 * height_of_the_user*39.37) - (4.330 * Age_of_the_user))
-        return BMR_Female1
+    # then formula will be:
+    elif Gender_of_the_user == Units_of_the_user:
+        BMR = round(American + (Weight1 * weight_of_the_user*pound) + (Height1 * height_of_the_user*inch) - (Age1 * Age_of_the_user))
+        return BMR
 
 
 
@@ -71,12 +77,12 @@ def check_user_BMR_category(BMR):
 
     "If User's BMR is: Calorific Value= BMR*Standard Numbers which will denote the intensity of the user. "
     Calorific_Value = BMR*1.2
-    Calorific_Value1 = BMR*1.375
+    Calorific_Value1 =BMR*1.375
     Calorific_Value2 = BMR*1.55
     Calorific_Value3 = BMR*1.725
 
     if  BMR>800 and BMR<=1100:
-        print("The Value of the calorie intake is:", Calorific_Value, "which means :No Exercise (0-1 Days)!!")
+        print("The Value of the calorie intake is:", Calorific_Value, "which means : Minimal Exercise (1 Day)!!")
     elif BMR >=1200 and BMR <=1400:
         print("The Value of the calorie intake is:", Calorific_Value1, "which means : Light Exercise (1-3 Days)!!")
     elif BMR >=1450 and BMR <=1700:
@@ -87,6 +93,15 @@ def check_user_BMR_category(BMR):
 
 
 if __name__ == "__main__":
+
+    #subject_file.read()
+    with open("Config.ini") as subjectfileObj:
+        subject_file.write(subjectfileObj)
+        subjectfileObj.flush()
+        subjectfileObj.close()
+        print("subject file 'Config.ini' is created")
+        #print(d2.keys())
+
     # This calling function gets the input from the user
     weight_of_the_user, height_of_the_user, Units_of_the_user, Gender_of_the_user, age_of_the_user = __getinput_to_calculate_bmr()
 
