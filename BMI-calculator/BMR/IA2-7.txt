@@ -1,0 +1,3 @@
+1. Updated configparser library to this program.
+2. Facing Major Issues in operand types.
+3. Unable to defined BMR.
