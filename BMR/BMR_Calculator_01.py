@@ -6,13 +6,15 @@
     # Get the Gender of the user
     # Get the weight(Kg/lb) of the user
     # Get the height(m/in") of the user
-    # Calculate the BMI using the formula on the basis of gender, age, height and weight
+    # Calculate the BMR using the formula on the basis of gender, age, height and weight
        For Male: BMR= 88.362+(13.397*weight in kg/lb)+(4.799*height in cm/in")- (5.677*age in years)
        For Female: BMR = 447.593+(9.247*weight in kg/ib)+(3.098*height in cm/in")- (4.330*age in years)
        Also, this BMR calculator include features in Metric Units (kg,metre) & American Units (pound, inch)
 
-Exercise 1: Calculate the BMR (in calorie)
-Exercise 2: Check if the no. of days workout the user does:
+Exercise 1: Create a config file in helper.py and then import it into this main script.
+Exercise 2: Calculate the BMR (in calorie)
+Exercise 4: On this basis of BMR result, calculate how much calorie intake you shall need for exercise.
+Exercise 3: Check if the no. of days of workout the user does:
             No. of Days       BMR *Value      Level of Intensity
                 0-1             BMR*1.2         NO Exercise
                 1-3            BMR*1.375       Light Exercise
@@ -21,13 +23,9 @@ Exercise 2: Check if the no. of days workout the user does:
 Here there will be an implication of User-defined functions and Calling function along with if else statement.
 """
 import configparser
-
-
-
-
-
-
 print("*****Welcome To The BMR Calculator*****")
+
+
 def __getinput_to_calculate_bmr():
     "This function gets the input from the user "
     Units_of_the_user = input("Metric or American:").lower()
@@ -43,10 +41,8 @@ def __getinput_to_calculate_bmr():
     elif Units_of_the_user == 'F' or 'f':
         print("BMR will be calculated for female user")
     Age_of_the_user = int(input("Enter the age of the user:"))
-
-
-
     return Weight_of_the_user, Height_of_the_user, Age_of_the_user,Units_of_the_user, Gender_of_the_user
+
 
 def calculate_bmr (Weight_of_the_user, Height_of_the_user, Age_of_the_user,Units_of_the_user, Gender_of_the_user):
     " This function calculates the BMR in metric OR american units on the basis of gender and age "
@@ -92,7 +88,6 @@ def calculate_bmr (Weight_of_the_user, Height_of_the_user, Age_of_the_user,Units
         return BMR_Female
 
 
-
 def check_user_BMR_category(BMR):
 
     "This function checks if the user's Level of Intesity is No Exercise, Light Exercise, Moderate Exercise, Heavy Weight Exercise, Severy Heavy Weight Exercise"
@@ -119,9 +114,8 @@ def check_user_BMR_category(BMR):
     elif BMR>2000:
         print("The Value of the calorie intake is:", Calorific_Value3, "which means :Heavy Weight Exercise (7 days)")
         return BMR
-
-
-
+    else:
+        print("The Value of the BMR is too low which means you should start exercise from today itself!!")
 
 
 if __name__ == "__main__":
