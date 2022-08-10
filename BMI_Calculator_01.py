@@ -16,7 +16,7 @@ class BMI_Calculator:
     BMI = 'calculator'
 
     #The init constructor for weight & height
-    def __int__(self,weight,height):
+    def __init__(self,weight,height):
 
         #instance variable
         self.weight = weight
@@ -25,17 +25,18 @@ class BMI_Calculator:
 
     #another instance constructor for weight & height
     def calculate_BMI(self):
-        return (round((self.weight/self.height)**2),2)
+        return round((self.weight/(self.height*self.height)),2)
 
 
 weight = float(input("Enter the weight in kg:"))
 height = float(input("Enter the height in meters:"))
 
    #object instant
-file = BMI_Calculator(weight, height)
-print("The BMI of the user is: ", file.calculate_BMI(), "kg/sq.metre")
+BMI_file = BMI_Calculator(weight, height)
+print("The BMI of the user is: ", BMI_file.calculate_BMI(), "kg/sq.metre")
 # inputs for the weight & height of the user
 
+BMI_Calculator =BMI_file.calculate_BMI()
 
 if  BMI_Calculator< 18.5:
     print("Oh No!!! UnderWeight")
